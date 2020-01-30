@@ -21,13 +21,18 @@ export class ShoppingListService {
         return this._ingredientsChange;
     }
 
-    addIngredient(ingredient: Ingredient) {
+    public addIngredient(ingredient: Ingredient) {
         this._ingredients.push(ingredient);
         this._ingredientsChange.emit(this.ingredients.slice());
     }
 
-    addIngredients(ingredients: Ingredient[]) {
+    public addIngredients(ingredients: Ingredient[]) {
         this._ingredients.push(...ingredients);
         this._ingredientsChange.emit(this.ingredients.slice());
+    }
+
+    public clearListOfIngredients() {
+        this._ingredients = [];
+        this._ingredientsChange.emit([]);
     }
 }

@@ -13,7 +13,7 @@ export class ShoppingEditComponent {
 
     constructor(private _shoppingListService: ShoppingListService) {}
 
-    onAddItem() {
+    private onAddItem() {
         const ingName: string = this.nameInputRef.nativeElement.value;
         const ingAmount: number = this.amountInputRef.nativeElement.value;
         if (!ingName || !ingAmount) {
@@ -24,15 +24,14 @@ export class ShoppingEditComponent {
                 ingAmount
             );
             this._shoppingListService.addIngredient(newIngredient);
-            console.log('btn add clicked!' + ingName + ingAmount);
         }
     }
 
-    onDeleteItem() {
+    private onDeleteItem() {
         console.log('item deleted!');
     }
 
-    onClearItem() {
-        console.log('item cleared!');
+    private onClearItems() {
+        this._shoppingListService.clearListOfIngredients();
     }
 }
