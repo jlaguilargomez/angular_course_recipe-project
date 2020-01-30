@@ -19,6 +19,5 @@ export class ShoppingListComponent {
                 this.ingredients = ingredientsArray;
             }
         );
-        console.log(this.ingredients);
     }
 }
