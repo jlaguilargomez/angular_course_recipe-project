@@ -33,7 +33,12 @@ export class RecipesService {
     ];
 
     get recipes() {
+        // mediante slice generamos una copia del array
         return this._recipes.slice();
+    }
+
+    getRecipe(index: number) {
+        return this.recipes[index];
     }
 
     constructor(private _shoppingListService: ShoppingListService) {}
