@@ -12,11 +12,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     public ingredients: Ingredient[];
     private subscription: Subscription;
 
-    constructor(private _shoppingListService: ShoppingListService) {}
+    constructor(private shoppingListService: ShoppingListService) {}
 
     ngOnInit() {
-        this.ingredients = this._shoppingListService.ingredients;
-        this.subscription = this._shoppingListService.ingredientsChange.subscribe(
+        this.ingredients = this.shoppingListService.ingredients;
+        this.subscription = this.shoppingListService.ingredientsChange.subscribe(
             (ingredientsArray: Ingredient[]) => {
                 this.ingredients = ingredientsArray;
             }
@@ -26,5 +26,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         // OJO, debemos dessuscribirnos del observable generado
         this.subscription.unsubscribe();
+    }
+
+    public onEditItem(index: number) {
+        console.log('edit item: ' + index);
+        this.shoppingListService.startedEditing.next(index);
     }
 }
