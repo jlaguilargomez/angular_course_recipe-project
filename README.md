@@ -4,37 +4,37 @@
 
 ## Content
 
-[X] Section 1: **Getting started**
+[**X**] Section 1: **Getting started**
 
-[X] Section 2: **The basics**
+[**X**] Section 2: **The basics**
 
-[X] Section 3: **Course project - The basics**
+[**X**] Section 3: **Course project - The basics**
 
-[X] Section 4: **Debugging**
+[**X**] Section 4: **Debugging**
 
-[X] Section 5: **Components & databinding deep drive**
+[**X**] Section 5: **Components & databinding deep drive**
 
-[X] Section 6: **Course project - Components & databinding**
+[**X**] Section 6: **Course project - Components & databinding**
 
-[X] Section 7: **Directives deep dive**
+[**X**] Section 7: **Directives deep dive**
 
-[X] Section 8: **Course project - Directives**
+[**X**] Section 8: **Course project - Directives**
 
-[X] Section 9: **Using services & dependency injection**
+[**X**] Section 9: **Using services & dependency injection**
 
-[X] Section 10: **Course project - Services & dependency injection**
+[**X**] Section 10: **Course project - Services & dependency injection**
 
-[X] Section 11: **Changing pages with routing**
+[**X**] Section 11: **Changing pages with routing**
 
-[X] Section 12: **Course project - Routing**
+[**X**] Section 12: **Course project - Routing**
 
-[X] Section 13: **Understanding observables**
+[**X**] Section 13: **Understanding observables**
 
-[X] Section 14: **Course project - Observables**
+[**X**] Section 14: **Course project - Observables**
 
-[X] Section 15: **Handling forms in Angular apps**
+[**X**] Section 15: **Handling forms in Angular apps**
 
-[X] Section 16: **Course project - Forms**
+[**X**] Section 16: **Course project - Forms**
 
 [ ] Section 17: **Using pipes to transform output**
 
