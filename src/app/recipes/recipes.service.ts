@@ -9,34 +9,35 @@ import { Subject } from 'rxjs';
 })
 export class RecipesService {
   public recipesChanged = new Subject<Recipe[]>();
-  private _recipes: Recipe[] = [
-    new Recipe(
-      'A test recipe',
-      'This is a test',
-      'https://cdn.pixabay.com/photo/2017/03/26/11/53/food-platter-2175326_960_720.jpg',
-      [
-        new Ingredient('lechuga', 1),
-        new Ingredient('puerro', 11),
-        new Ingredient('platano', 4),
-      ]
-    ),
-    new Recipe(
-      'Cosa',
-      'Güena',
-      'https://cdn.pixabay.com/photo/2016/12/26/17/28/food-1932466__340.jpg',
-      [
-        new Ingredient('jamon', 2),
-        new Ingredient('tocino', 3),
-        new Ingredient('panceta', 23),
-      ]
-    ),
-  ];
+  // public recipes: Recipe[] = [
+  //   new Recipe(
+  //     'A test recipe',
+  //     'This is a test',
+  //     'https://cdn.pixabay.com/photo/2017/03/26/11/53/food-platter-2175326_960_720.jpg',
+  //     [
+  //       new Ingredient('lechuga', 1),
+  //       new Ingredient('puerro', 11),
+  //       new Ingredient('platano', 4),
+  //     ]
+  //   ),
+  //   new Recipe(
+  //     'Cosa',
+  //     'Güena',
+  //     'https://cdn.pixabay.com/photo/2016/12/26/17/28/food-1932466__340.jpg',
+  //     [
+  //       new Ingredient('jamon', 2),
+  //       new Ingredient('tocino', 3),
+  //       new Ingredient('panceta', 23),
+  //     ]
+  //   ),
+  // ];
+  public recipes: Recipe[] = [];
 
   constructor(private _shoppingListService: ShoppingListService) {}
 
-  public get recipes() {
+  public getRecipes() {
     // mediante slice generamos una copia del array
-    return this._recipes.slice();
+    return this.recipes.slice();
   }
 
   public getRecipe(index: number) {
@@ -48,17 +49,22 @@ export class RecipesService {
   }
 
   public addRecipe(recipe: Recipe) {
-    this._recipes.push(recipe);
+    this.recipes.push(recipe);
     this.recipesChanged.next(this.recipes.slice());
   }
 
   public updateRecipe(index: number, newRecipe: Recipe) {
-    this._recipes[index] = newRecipe;
+    this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
 
   public deleteRecipe(index: number) {
-    this._recipes.splice(index, 1);
+    this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  public setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
     this.recipesChanged.next(this.recipes.slice());
   }
 }
