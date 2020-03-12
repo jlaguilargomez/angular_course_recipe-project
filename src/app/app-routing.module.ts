@@ -9,8 +9,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
 
-const appRoutes = [
+const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  // esto debería estar en el componente "recipes-routing.module, pero no consigo que funcione"
   {
     path: 'recipes',
     component: RecipesComponent,
