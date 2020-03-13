@@ -10,7 +10,7 @@ import { RecipeStartComponent } from './recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { SharedModule } from '../shared/shared.module';
-// import { RecipesRoutingModule } from './recipes-routing.module';
+import { RecipesRoutingModule } from './recipes-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     // en lugar de BrowserModule, para tener acceso a ngIf, ngFor y otras funcionalidades, importamos este modulo
     ReactiveFormsModule,
-    RouterModule,
-    // importamos el routing del módulo Recipes
-    // RecipesRoutingModule,
     SharedModule,
+    RecipesRoutingModule,
   ],
   exports: [
     RecipesComponent,

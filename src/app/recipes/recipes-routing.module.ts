@@ -9,7 +9,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 import { ModuleWithProviders } from '@angular/core';
 
-const subRoutes: Routes = [
+export const recipesRoutes: Routes = [
   {
     path: 'recipes',
     component: RecipesComponent,
@@ -25,7 +25,7 @@ const subRoutes: Routes = [
 
 @NgModule({
   // en este caso llamamos al método "forChild" que es el encargado de cargar las rutas en los módulos dependientes del anterior
-  imports: [RouterModule],
-  exports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(recipesRoutes)],
+  exports: [RouterModule],
 })
 export class RecipesRoutingModule {}
