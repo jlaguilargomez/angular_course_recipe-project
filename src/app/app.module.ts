@@ -7,19 +7,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-
 import { NotFoundComponent } from './not-found/not-found.component';
-
-import { DropdownDirective } from './shared/dropdown.directive';
-
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
 // import { RecipesRoutingModule } from './recipes/recipes-routing.module';
-import { RecipesModule } from './recipes/recipes.module';
+// import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -37,8 +31,9 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipesModule,
-    ShoppingListModule,
+    // como este módulo es el que vamos a importar en "LAZY MODE" no será necesario cargarlo ahora
+    // RecipesModule,
+    // ShoppingListModule,
     SharedModule,
   ],
   providers: [

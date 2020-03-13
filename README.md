@@ -36,17 +36,17 @@
 
 [**X**] Section 16: **Course project - Forms**
 
-[ ] Section 17: **Using pipes to transform output**
+[**X**] Section 17: **Using pipes to transform output**
 
-[ ] Section 18: **Making http request**
+[**X**] Section 18: **Making http request**
 
-[ ] Section 19: **Course project - Http**
+[**X**] Section 19: **Course project - Http**
 
-[ ] Section 20: **Authentication & route projection in Angular**
+[**X**] Section 20: **Authentication & route projection in Angular**
 
-[ ] Section 21: **Dynamic components**
+[**X**] Section 21: **Dynamic components**
 
-[ ] Section 22: **Angular modules & optimizing Angular apps**
+[**X**] Section 22: **Angular modules & optimizing Angular apps**
 
 [ ] Section 23: **Deploying an Angular app**
 
