@@ -27,13 +27,6 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     SharedModule,
     RecipesRoutingModule,
   ],
-  exports: [
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    RecipeDetailComponent,
-  ],
+  // no es necesario exportar porque estamos navegando también en ese módulo
 })
 export class RecipesModule {}
