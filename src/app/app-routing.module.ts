@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
   {
     path: 'recipes',
     // ojo a la ruta, no añadir .TS!!

@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   // la variable determinará el comportamiento de los elementos del Header
   public isAuthenticated = false;
+  public collapsed = false;
   // creamos una variable subscription para poder "des-suscribirnos al cerrar el componente"
   private userSub: Subscription;
 
@@ -44,5 +45,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public onLogout() {
     this._authService.logout();
+  }
+
+  public onChangeCollapsed() {
+    this.collapsed = !this.collapsed;
   }
 }

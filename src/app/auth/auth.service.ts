@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, Subject, BehaviorSubject } from 'rxjs';
-import { error } from 'protractor';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface AuthRespondData {
   idToken: string;
@@ -32,7 +32,9 @@ export class AuthService {
     return (
       this._http
         .post<AuthRespondData>(
-          'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAKEVRqxl3IddIJu7gfzLW1KrAm2HPlvrY',
+          // vamos a mover la KEY al archivo "environments"
+          'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+            environment.firebaseAPIKey,
           {
             email: userEmail,
             password: userPassword,
@@ -59,7 +61,9 @@ export class AuthService {
     return this._http
       .post<AuthRespondData>(
         // ojo que el ENDPOINT cambia!! (ver docu)
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAKEVRqxl3IddIJu7gfzLW1KrAm2HPlvrY',
+        // vamos a mover la KEY al archivo "environments"
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+          environment.firebaseAPIKey,
         {
           email: userEmail,
           password: userPassword,

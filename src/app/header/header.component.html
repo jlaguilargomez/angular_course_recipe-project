@@ -2,11 +2,7 @@
   <div class="container-fluid">
     <!--  -->
     <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle"
-        (click)="collapsed = !collapsed"
-      >
+      <button type="button" class="navbar-toggle" (click)="onChangeCollapsed()">
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
       <a routerLink="/" class="navbar-brand">Recipe Book</a>

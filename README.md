@@ -48,7 +48,7 @@
 
 [**X**] Section 22: **Angular modules & optimizing Angular apps**
 
-[ ] Section 23: **Deploying an Angular app**
+[**X**] Section 23: **Deploying an Angular app**
 
 [ ] Section 24: **Bonus: working with NgRx in Angular**
 
