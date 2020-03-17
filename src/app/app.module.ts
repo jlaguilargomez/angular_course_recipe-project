@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// debemos importar STORE MODULE para poder comenzar a gestionar estados
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,6 +18,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 // import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({ shoppingList: shoppingListReducer }),
     // como este módulo es el que vamos a importar en "LAZY MODE" no será necesario cargarlo ahora
     // RecipesModule,
     // ShoppingListModule,
