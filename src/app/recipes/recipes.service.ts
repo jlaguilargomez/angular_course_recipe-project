@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
+
+import { Store } from '@ngrx/store';
+
+import { Subject } from 'rxjs';
+
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
-import { Subject } from 'rxjs';
+import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions';
+import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipesService {
   public recipesChanged = new Subject<Recipe[]>();
+
+  // LO HEMOS LLEVADO AL STATE!!
   // public recipes: Recipe[] = [
   //   new Recipe(
   //     'A test recipe',
@@ -33,7 +41,10 @@ export class RecipesService {
   // ];
   public recipes: Recipe[] = [];
 
-  constructor(private _shoppingListService: ShoppingListService) {}
+  constructor(
+    private _shoppingListService: ShoppingListService,
+    private store: Store<fromShoppingList.AppState>
+  ) {}
 
   public getRecipes() {
     // mediante slice generamos una copia del array
@@ -45,7 +56,8 @@ export class RecipesService {
   }
 
   public addIngredientToShoppingList(ingredients: Ingredient[]) {
-    this._shoppingListService.addIngredients(ingredients);
+    // manejamos los datos en el STORE, así que cada vez que adjuntamos nuevos ingredientes, actualizamos el ESTADO de la app
+    this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
   }
 
   public addRecipe(recipe: Recipe) {
